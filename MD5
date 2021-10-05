@@ -1,6 +1,6 @@
-a573af91a362064564c2c8b71162cec2 *DESCRIPTION
+b20e0bc83a263a5984b026c050888769 *DESCRIPTION
 fa42b2d21cc1d5f8bbdc9cd9d196f06c *NAMESPACE
-c82e00dc8b0eb014e5242785acb85ba1 *NEWS.md
+cebe3f63bdc155d144434fafee75de0b *NEWS.md
 ae56e35f2722492be203d717d170880f *R/RcppExports.R
 a1cede71a9269236342212505ba607a4 *R/admix_fam.R
 13d89998dd29b94b6469f4f1d57a8333 *R/admix_last_gen.R
@@ -19,7 +19,7 @@ a9bed56b144b9424e8a45e114b654b2f *README.md
 efb58c49f2bbdb05d9727d49c9074859 *build/vignette.rds
 270a666fa6e6243d992d49bf2a1dd973 *inst/doc/simfam.R
 3e25334e667877b160dbfff77475777c *inst/doc/simfam.Rmd
-45fb886963f95cb7a4f431a95b04c5b0 *inst/doc/simfam.html
+b45b212a91ab83423e0e61362c2caad3 *inst/doc/simfam.html
 0b424170e5ee5c5bafd2c8a6850233ec *man/admix_fam.Rd
 4cee874c0c6748f0e86e9da23bd7fdf9 *man/admix_last_gen.Rd
 172ae2b72eedd1e10b82071b07011e65 *man/draw_sex.Rd
@@ -33,5 +33,5 @@ c5c5654cf42115c4f0e4d7150804df3e *man/prune_fam.Rd
 a5345a65af7baacf2b2f717d16038680 *src/RcppExports.cpp
 99e320a8090c71b4585e5ffcd65f2c2f *src/geno_fam_cpp.cpp
 b855b5908f31b2f5c7f86386544b4d9e *tests/testthat.R
-4f4440699201c7a50e92bbeb21f19bf4 *tests/testthat/test-simfam.R
+70be86302efd9369f80973481f1f8c82 *tests/testthat/test-simfam.R
 3e25334e667877b160dbfff77475777c *vignettes/simfam.Rmd
