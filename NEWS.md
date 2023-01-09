@@ -45,7 +45,7 @@
 
 # simfam 0.0.9.9000 (2021-08-06)
 
-- Rewrote core of function `draw_geno_fam` in C++ (using Rcpp).
+- Rewrote core of function `draw_geno_fam` in C++ (using `Rcpp`).
   New version is much faster and uses about half as much memory as the previous pure-R version!
 
 # simfam 0.0.10.9000 (2021-08-06)
@@ -93,3 +93,48 @@
 - 2nd CRAN submission!
 - Tests: adjusted sample sizes in an internal unit test to make a particular `sim_pedigree` error rate ~100x less likely than before (error due to not being able to pair everybody; previously, this unlikely error expected 0.4% of the time actually occurred on CRAN, now it is expected 0.002% of the time).
 
+# simfam 1.1.0.9000 (2022-04-26)
+
+First set of updates for simulating with recombination!
+
+- Updated reference DOI to newest preprint
+- Added functions `recomb_fam` and `recomb_init_founders` for simulating recombination breaks for a pedigree!
+  - These breaks are on genetic distance only so far.
+  - Other nice features (drawing genotypes, calculating kinship, or local ancestry) are not yet present but they are planned.
+
+# simfam 1.1.1.9000 (2022-06-06)
+
+- Added simplified human genome recombination maps (data) and the functions used to create them.
+  - Added function `recomb_map_fix_ends_chr` to shift and extrapolate genetic map to chromosome ends.
+  - Added function `recomb_map_simplify_chr` to simplify genetic maps by removing rows that can be interpolated to within a desired error.
+  - Added and documented data `recomb_map_hg38` and `recomb_map_hg37`, which was created from existing maps processed by the above two functions.
+
+# simfam 1.1.2.9000 (2022-06-15)
+
+- Functions `recomb_fam` and `recomb_init_founders` slight change in input and output formats: each chromosome list now has column `posg` indicating end of recombination block in genetic position (the column used to be called `end`; changed to match notation in recombination map, where `pos` is position in base pairs and `posg` is in genetic distance).
+- Function `recomb_init_founders` argument `lengs` may now be a recombination map for simplicity, from which the desired chromosome lengths are extracted, rather than having to extract them in a separate step.
+- Added function `recomb_map_inds` to map recombination breaks from genetic positions to base pair coordinates.
+
+# simfam 1.1.3.9000 (2022-06-24)
+
+- Added function `recomb_last_gen`, a wrapper around `recomb_fam` that processes data in discrete generations and returns the recombination breaks/blocks of the final generation only, to reduce memory usage.
+  Same analogy of previous `*_last_gen` functions and their corresponding `*_fam` versions.
+- Added function `recomb_haplo_inds` to construct the haplotypes of descendant individuals given the haplotypes of the ancestors.
+- Added function `recomb_geno_inds` to construct a standard genotype matrix from the haplotypes of individuals (a complex nested list structure).
+
+# simfam 1.1.4.9000 (2022-06-27)
+
+- Added function `fam_ancestors` to construct simple ancestor pedigrees for a single person with a desired number of generations, and automatic names.
+
+# simfam 1.1.5.9000 (2022-06-28)
+
+- Added function `recomb_admix_inds` to produce true population ancestry dosage matrices that parallel genotype matrices, useful for regression models that incorporate local ancestry.
+
+# simfam 1.1.6 (2023-01-06)
+
+- CRAN submission
+- Documentation edits
+  - Updated hyperlink to raw genetic maps.
+  - Fixed typos
+  - Escaped more code to simplify spellcheck in the future.
+- Updated `cran-comments.md`
